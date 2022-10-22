@@ -1,0 +1,17 @@
+.navDistribucion {
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+}
+.carrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  height: 2.5em;
+  width: 1.5em;
+  display: flex;
+  align-items: center;
+}
