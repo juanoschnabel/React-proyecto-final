@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget";
 const NavBar = () => {
   return (
     <>
-      <nav className=" navbar navbar-expand-lg navbar-light bg-light">
+      <nav className=" col-12 navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             KNOCK OUT MARKET
@@ -20,7 +20,7 @@ const NavBar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="navDistribucion collapse navbar-collapse" id="navbarNav">
-            <div>
+            <div className="">
               <ul class="navbar-nav">
                 <li class="nav-item border border-2 border-info">
                   <a class="nav-link active" href="#">
@@ -61,7 +61,6 @@ const NavBar = () => {
                 <div>
                   <CartWidget />
                 </div>
-                {/* <ItemListContainer greeting={4} /> */}
               </div>
             </div>
           </div>
