@@ -1,17 +1,28 @@
 .navDistribucion {
-  justify-content: space-between;
-  align-content: space-between;
-  align-items: baseline;
-  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 .carrito {
   display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 .logo {
   height: 2.5em;
   width: 1.5em;
   display: flex;
   align-items: center;
+}
+nav {
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.xk {
+  display: flex;
+  list-style: none;
 }
