@@ -1,15 +1,16 @@
 import "../css/NavBar.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
       <nav className=" col-12 navbar navbar-expand-lg navbar-text">
-        <div class="container">
-          <a class="navbar-brand" href="#">
+        <div className="container">
+          <Link to="/" className="navbar-brand">
             KNOCK OUT MARKET
-          </a>
+          </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -17,42 +18,37 @@ const NavBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="navDistribucion navbar-collapse">
-            <div className="">
-              <ul class="xk">
-                <li class="">
-                  <a class=" active" href="#">
-                    BOXEO
-                  </a>
+          <div className="navDistribucion navbar-collapse">
+            <div>
+              <ul className="xk">
+                <li>
+                  <Link to="/category/1" className=" active">
+                    BOXEO / MMA / MUAY THAY
+                  </Link>
                 </li>
-                <li class="">
-                  <a class=" active" href="#">
+                <li>
+                  <Link to="/category/7" className=" active">
                     TAE KWONDO / KARATE
-                  </a>
+                  </Link>
                 </li>
-                <li class="">
-                  <a class=" active" href="#">
-                    MMA / MUAY THAY
-                  </a>
-                </li>
-                <li class="">
-                  <a class=" active" href="#">
+                <li>
+                  <Link to="/category/2" className=" active">
                     OTROS
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="carrito ">
-              <ul class="navbar-nav ">
-                <li class="nav-item ">
-                  <a class=" active" href="#">
+              <ul className="navbar-nav ">
+                <li className="nav-item ">
+                  <a className=" active" href="#">
                     Ingresar
                   </a>
                 </li>
-                <li class="nav-item ">
-                  <a class=" active" href="#">
+                <li className="nav-item ">
+                  <a className=" active" href="#">
                     Registrarse
                   </a>
                 </li>
