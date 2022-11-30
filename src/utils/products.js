@@ -3,7 +3,7 @@ export const products = [
     name: "CIELO TIERRA EVERLAST COMPLETO INFLABLE BOXEO MARCIALES MMA",
     img: "https://http2.mlstatic.com/D_NQ_NP_895604-MLA31351502819_072019-O.webp",
     price: 21591,
-    stock: 15,
+    stock: 9,
     description: "Cielo tierra",
     id: 1,
     categoryId: 1,

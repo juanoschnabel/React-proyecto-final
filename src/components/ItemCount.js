@@ -1,29 +1,35 @@
-import { useState } from "react";
-const ItemCount = () => {
-  const [init, setInit] = useState(0);
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    setCount(initial);
+  }, []);
   const add = () => {
-    setInit(init + 1);
+    if (count < stock) {
+      setCount(count + 1);
+    }
   };
   const subtract = () => {
-    if (init > 0) {
-      setInit(init - 1);
+    if (count > initial + 1) {
+      setCount(count - 1);
     }
   };
   return (
     <>
       <button type="button" className="btn btn-primary" onClick={add}>
-        Agregar producto al carrito
+        +
       </button>
-      <br />
-      <br />
+      <span className="alert alert-primary">{count}</span>
       <button type="button" className="btn btn-primary" onClick={subtract}>
-        Eliminar producto del carrito
+        -
       </button>
-      <br />
-      <br />
-      <span className="alert alert-primary">
-        Agregaste {init} unidades al carrito{" "}
-      </span>
+
+      {stock && count >= 0 ? (
+        <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+      ) : (
+        <Link to="/cart">Ir al carrito</Link>
+      )}
     </>
   );
 };

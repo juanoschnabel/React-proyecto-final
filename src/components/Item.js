@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 const Item = (props) => {
   return (
-    <div className="card-group ">
-      <div className="card">
-        <img className="w-25 card-img-top" src={props.img} alt="..." />
-        <div className="card-body">
-          <Link to={`/item/${props.id}`} className="card-title">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <img className="img-fluid" src={props.img} alt="..." />
+        </div>
+        <div className="col-md-6">
+          <Link to={`/item/${props.id}`} className="fs-4">
             {props.name}
           </Link>
-          <p className="card-text">${props.price}</p>
+          <br></br>
+          <br></br>
+          <p className="fs-5">${props.price}</p>
         </div>
       </div>
     </div>
