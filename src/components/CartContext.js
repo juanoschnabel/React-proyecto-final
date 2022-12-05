@@ -5,8 +5,8 @@ export const CartContext = createContext();
 const CartcontextProvider = (props) => {
   const [cartList, setCartList] = useState([]);
   const addToCart = (item, qty) => {
-    const itemFind = cartList.find((element) => element.id == item.id);
-    console.log(itemFind);
+    let itemFind = cartList.find((element) => element.id == item.id);
+
     if (itemFind == undefined) {
       setCartList([
         ...cartList,
@@ -15,6 +15,21 @@ const CartcontextProvider = (props) => {
           name: item.name,
           price: item.price,
           qty: qty,
+          img: item.img,
+          subtotal: item.price * qty,
+        },
+      ]);
+    } else {
+      const prevQty = itemFind.qty;
+      const prevId = itemFind.id;
+      let newCartList = cartList.filter((element) => element.id != prevId);
+      setCartList([
+        ...newCartList,
+        {
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          qty: qty + prevQty,
           img: item.img,
           subtotal: item.price * qty,
         },
