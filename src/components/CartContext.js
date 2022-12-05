@@ -7,17 +7,19 @@ const CartcontextProvider = (props) => {
   const addToCart = (item, qty) => {
     const itemFind = cartList.find((element) => element.id == item.id);
     console.log(itemFind);
-    setCartList([
-      ...cartList,
-      {
-        id: item.id,
-        name: item.name,
-        price: item.price,
-        qty: qty,
-        img: item.img,
-        subtotal: item.price * qty,
-      },
-    ]);
+    if (itemFind == undefined) {
+      setCartList([
+        ...cartList,
+        {
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          qty: qty,
+          img: item.img,
+          subtotal: item.price * qty,
+        },
+      ]);
+    }
   };
 
   const clear = () => {
