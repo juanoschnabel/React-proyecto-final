@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-// import { Link } from "react-router-dom";
 import {
   serverTimestamp,
   setDoc,
@@ -53,16 +52,20 @@ const Resumen = () => {
   };
   return (
     <>
-      <div id="header">
-        <header className="">
-          <span>
-            <h3>TOTAL: ${Total()}</h3>
-          </span>
-          <div>
-            <button onClick={clear}>VACIAR CARRITO</button>
-            <button onClick={createOrder}>TERMINAR MI COMPRA</button>
-          </div>
-        </header>
+      <div className="ms-5 mt-3">
+        <div className="card-body">
+          <h5 className="card-title">TOTAL: ${Total()}</h5>
+          <button type="button" className="btn btn-danger me-3" onClick={clear}>
+            VACIAR CARRITO
+          </button>
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={createOrder}
+          >
+            TERMINAR MI COMPRA
+          </button>
+        </div>
       </div>
     </>
   );

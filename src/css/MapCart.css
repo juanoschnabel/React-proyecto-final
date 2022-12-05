@@ -1,18 +1,4 @@
-.grid {
-  display: grid;
-  grid-template-areas:
-    "main header"
-    "main header"
-    "main header";
-  grid-template-rows: repeat (1fr);
-}
-#main {
-  grid-area: main;
-}
-#header {
-  grid-area: header;
-}
-.card {
-  display: flex;
-  flex-direction: column;
+.img {
+  width: 100px;
+  height: auto;
 }

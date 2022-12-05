@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
+
 const Item = (props) => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <img className="img-fluid" src={props.img} alt="..." />
-        </div>
-        <div className="col-md-6">
-          <Link to={`/item/${props.id}`} className="fs-4">
-            {props.name}
+    <div className="mt-5">
+      <div className="col-12 ms-5">
+        <span>
+          <Link to={`/item/${props.id}`}>
+            <h3 className="fs-4">{props.name}</h3>
           </Link>
-          <br></br>
-          <br></br>
-          <p className="fs-5">${props.price}</p>
-        </div>
+        </span>{" "}
+        <Link to={`/item/${props.id}`}>
+          <img className="img rounded-start" src={props.img}></img>
+        </Link>
+        <ul className="list-group">
+          <span className="badge bg-success rounded-pill fs-5">
+            ${props.price} por Unidad
+          </span>
+        </ul>
       </div>
     </div>
   );

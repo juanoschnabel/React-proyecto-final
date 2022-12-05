@@ -22,8 +22,8 @@ const CartcontextProvider = (props) => {
     setCartList([]);
   };
   const removeItem = (id) => {
-    let newArray = cartList.filter((item) => item.id != id);
-    setCartList(newArray);
+    let itemDelete = cartList.filter((item) => item.id != id);
+    setCartList(itemDelete);
   };
   const calcItemsQty = () => {
     let qtys = cartList.map((item) => item.qty);

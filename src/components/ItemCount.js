@@ -17,18 +17,28 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
   };
   return (
     <>
-      <button type="button" className="btn btn-primary" onClick={add}>
+      <button type="button" className="btn btn-primary me-2" onClick={add}>
         +
       </button>
       <span className="alert alert-primary">{count}</span>
-      <button type="button" className="btn btn-primary" onClick={subtract}>
+      <button type="button" className="btn btn-primary ms-2" onClick={subtract}>
         -
       </button>
 
       {stock && count >= 0 ? (
-        <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+        <button
+          type="button"
+          className="btn btn-link"
+          onClick={() => onAdd(count)}
+        >
+          Agregar al carrito
+        </button>
       ) : (
-        <Link to="/cart">Ir al carrito</Link>
+        <Link to="/cart">
+          <button type="button" className="btn btn-success">
+            Ir al carrito
+          </button>
+        </Link>
       )}
     </>
   );

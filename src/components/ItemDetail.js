@@ -5,16 +5,15 @@ import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ item }) => {
   const [itemCount, setItemCount] = useState(0);
-  const { addToCart, calcItemsQty } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const onAdd = (qty) => {
     alert("Agregaste  " + qty + " productos a tu carrito!");
     setItemCount(qty);
-
     addToCart(item, qty);
   };
   return (
     <>
-      <div className="container">
+      <div className="container mt-4">
         <div className="row">
           <div className="col-md-6">
             <img className="img-fluid" src={item.img}></img>
@@ -35,7 +34,11 @@ const ItemDetail = ({ item }) => {
                   onAdd={onAdd}
                 />
               ) : (
-                <Link to="/cart">Ir al carrito</Link>
+                <Link to="/cart">
+                  <button type="button" className="btn btn-success">
+                    Ir al carrito
+                  </button>
+                </Link>
               )}
             </div>
           </div>
