@@ -5,11 +5,10 @@ export const CartContext = createContext();
 const CartcontextProvider = (props) => {
   const [cartList, setCartList] = useState([]);
   const addToCart = (item, qty) => {
-    let itemFind = cartList.find((element) => element.id == item.id);
+    const itemFind = cartList.find((element) => element.id === item.id);
 
-    if (itemFind == undefined) {
+    if (itemFind === undefined) {
       setCartList([
-        ...cartList,
         {
           id: item.id,
           name: item.name,
@@ -18,13 +17,13 @@ const CartcontextProvider = (props) => {
           img: item.img,
           subtotal: item.price * qty,
         },
+        ...cartList,
       ]);
     } else {
-      const prevQty = itemFind.qty;
+      const prevQty = Number(itemFind.qty);
       const prevId = itemFind.id;
-      let newCartList = cartList.filter((element) => element.id != prevId);
+      let newCartList = cartList.filter((element) => element.id !== prevId);
       setCartList([
-        ...newCartList,
         {
           id: item.id,
           name: item.name,
@@ -33,6 +32,7 @@ const CartcontextProvider = (props) => {
           img: item.img,
           subtotal: item.price * qty,
         },
+        ...newCartList,
       ]);
     }
   };
@@ -41,7 +41,7 @@ const CartcontextProvider = (props) => {
     setCartList([]);
   };
   const removeItem = (id) => {
-    let itemDelete = cartList.filter((item) => item.id != id);
+    let itemDelete = cartList.filter((item) => item.id !== id);
     setCartList(itemDelete);
   };
   const calcItemsQty = () => {

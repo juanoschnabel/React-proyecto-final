@@ -12,11 +12,13 @@ const Item = (props) => {
         <Link to={`/item/${props.id}`}>
           <img className="img rounded-start" src={props.img}></img>
         </Link>
-        <ul className="list-group">
-          <span className="badge bg-success rounded-pill fs-5">
-            ${props.price} por Unidad
-          </span>
-        </ul>
+        <Link to={`/item/${props.id}`}>
+          <ul className="list-group">
+            <span className="badge bg-success rounded-pill fs-5">
+              ${props.price} por Unidad
+            </span>
+          </ul>
+        </Link>
       </div>
     </div>
   );
